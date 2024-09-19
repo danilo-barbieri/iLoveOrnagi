@@ -1,210 +1,80 @@
-/* Reset básico para margens e preenchimentos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Estilo geral da página */
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #f0f4f8, #c9d6e3);
-    color: #333;
-    padding: 20px;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-
-header {
+    background-color: #1c1c1c;
+    color: #f5deb3;
+    font-family: 'Cochin', serif;
     text-align: center;
-    margin-bottom: 30px;
 }
 
+/* Estilo do cabeçalho */
 header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: #0077b6;
-    font-family: 'Georgia', serif;
+    font-family: 'Luminari', 'Cochin', serif;
+    font-size: 3rem;
+    margin-top: 20px;
+    color: #b69e4b;
 }
 
+/* Estilo do nav */
 nav ul {
     list-style-type: none;
     padding: 0;
 }
 
 nav ul li {
-    display: inline-block;
-    margin-right: 15px;
+    margin: 20px;
 }
 
-nav ul li a {
+/* Estilo das "cartas" */
+.carta-hp {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background: #f5deb3;
+    color: #5b4636;
+    border: 2px solid #5b4636;
+    border-radius: 10px;
     text-decoration: none;
-    color: #0077b6;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #e0f7fa;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-nav ul li a:hover {
-    background-color: #0077b6;
-    color: #fff;
-}
-
-.btn {
-    display: inline-block;
-    margin: 10px 0;
-    padding: 10px 20px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #0077b6;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn:hover {
-    background-color: #005f8b;
-    transform: scale(1.05);
-}
-
-.input-field {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    font-size: 1em;
-    border: 2px solid #0077b6;
-    border-radius: 5px;
-    outline: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.input-field:focus {
-    border-color: #005f8b;
-}
-
-.highlight-text {
-    font-size: 1.2em;
-    color: #005f8b;
-    margin: 0;
-    font-weight: bold;
-}
-
-/* Estilos para a caixinha de presente */
-.caixinha-surpresa {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    background-color: #ff6f61; /* Cor da caixa */
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    transition: transform 0.5s ease;
-    background-image: url('foto.jpg'); /* Substitua pelo caminho da sua imagem */
-    background-size: cover;
-    background-position: center;
-}
-
-.caixinha-surpresa-capa {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.8); /* Cor da capa */
-    border: 5px solid transparent; /* Remover a borda preta */
-    border-radius: 10px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.5s ease, background-color 0.5s ease;
-    z-index: 1;
-}
-
-/* Faixas do presente */
-.caixinha-surpresa::before,
-.caixinha-surpresa::after {
-    content: '';
-    position: absolute;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.caixinha-surpresa::before {
-    width: 80%;
-    height: 20px;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-}
-
-.caixinha-surpresa::after {
-    width: 20px;
-    height: 80%;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* Efeito de revelação */
-.caixinha-surpresa.revelada .caixinha-surpresa-capa {
-    transform: rotateX(180deg);
-    background-color: transparent; /* Torna a capa transparente */
-}
-
-.caixinha-surpresa:hover {
-    transform: scale(1.05);
-}
-
-#coisaAleatoria {
-    display: none;
-    position: absolute;
-    z-index: 2;
-    color: #fff;
-    font-size: 1.5em;
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-}
-
-/* Estilos para as caixas de texto */
-/* Estilos para as caixas de texto */
-#textos {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    max-width: 800px;
-}
-
-.texto-box {
-    background-color: #fff;
-    border: 2px solid #0077b6;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
 }
 
-.texto-box:hover {
-    background-color: #e0f7fa;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.carta-hp:hover {
+    transform: rotate(-2deg) scale(1.1);
+    background-color: #ede6d1;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.texto-box::before {
+/* Estilo do ponteiro (varinha) */
+body {
+    cursor: url('wand.png'), auto; /* A URL precisa ser a de uma imagem de varinha */
+}
+
+/* Animação de feitiço */
+body::after {
     content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border-radius: 12px;
     pointer-events: none;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle, #ff0, transparent);
+    border-radius: 50%;
+    opacity: 0;
+    animation: feitiço 1s infinite ease-out;
+}
+
+@keyframes feitiço {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+/* Animação ao mover o mouse */
+body:hover::after {
+    opacity: 1;
+    animation: feitiço 1s ease-out;
 }
