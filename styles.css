@@ -1,80 +1,279 @@
-/* Estilo geral da página */
-body {
-    background-color: #1c1c1c;
-    color: #f5deb3;
-    font-family: 'Cochin', serif;
-    text-align: center;
-}
-
-/* Estilo do cabeçalho */
-header h1 {
-    font-family: 'Luminari', 'Cochin', serif;
-    font-size: 3rem;
-    margin-top: 20px;
-    color: #b69e4b;
-}
-
-/* Estilo do nav */
-nav ul {
-    list-style-type: none;
+* {
+    margin: 0;
     padding: 0;
-}
+    box-sizing: border-box;
+  }
+  
+  body {
+    cursor: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDYwIDYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0aXRsZS8+PGcgaWQ9ImNvbG91ciI+PHBvbHlnb24gZmlsbD0iIzVkNDAzOCIgcG9pbnRzPSIyOCAzNyAyMyAzMiA1OSAxIDI4IDM3Ii8+PHBvbHlnb24gZmlsbD0iIzQ5MzIyZSIgcG9pbnRzPSI0NC4wNjMgMTMuODYzIDI1LjkyNSAzNC45MjUgMjggMzcgNTkgMSA0NC4wNjMgMTMuODYzIi8+PHBhdGggZD0iTS43NTg1Nyw1NGw1LDUsMi40MDc2NS0yLjQwNzc3YTUuMTAzMzUsNS4xMDMzNSwwLDAsMCwuOTU3OTUtMS4zNTQ4NGM2LjAyNTY3LTEyLjIzNjMzLDE0LjE0OTUzLTEyLjY2MywxOC4wOTY3NC0xNS41OTYxNWExLjk4NDQ2LDEuOTg0NDYsMCwwLDAsLjE4ODUyLTIuOTkwMzlsLTQuMTgxNi00LjE4MTYzYy0xLjIwNTY1LTEuMjA1NjYtMi40NDEyMS0xLjIxNy0zLjIzMTI5LS40NjczMUMxNy4wNjA2MSwzNC43ODc1OCwxMi41ODM3MSw0Mi43MjY2Miw2Ljk2NzI0LDQ3LjM5QTguNDk3MzIsOC40OTczMiwwLDAsMSwzLjg5MzEsNDkuMTE3QzEuNzM1Myw0OS43MjIyLjc1ODU3LDUyLjUyNjE0Ljc1ODU3LDU0WiIgZmlsbD0iIzVkNDAzOCIvPjxwYXRoIGQ9Ik0yNy40MDk0MiwzNi42NTA4MmwtMi0yYTEuOTg0NSwxLjk4NDUsMCwwLDEtLjE4ODQ4LDIuOTkwNDJjLTMuOTQ3MjcsMi45MzMxMS0xMi4wNzExMSwzLjM1OTgtMTguMDk2OCwxNS41OTYxM2E1LjEwMTQ1LDUuMTAxNDUsMCwwLDEtLjk1Nzk1LDEuMzU0ODZMMy43NTg1NCw1N2wyLDJMOC4xNjYyLDU2LjU5MjIyYTUuMTAxNDUsNS4xMDE0NSwwLDAsMCwuOTU3OTUtMS4zNTQ4NmM2LjAyNTctMTIuMjM2MzMsMTQuMTQ5NTQtMTIuNjYzLDE4LjA5NjgtMTUuNTk2MTNBMS45ODQ1LDEuOTg0NSwwLDAsMCwyNy40MDk0MiwzNi42NTA4MloiIGZpbGw9IiM0OTMyMmUiLz48L2c+PGcgZGF0YS1uYW1lPSJMYXllciAxIiBpZD0iTGF5ZXJfMSI+PHBhdGggZD0iTTU5LjcwNy4yOTMzMkEuOTk4MzguOTk4MzgsMCwwLDAsNTguMzQ3NjYuMjQyNTRMMjIuODUxMjYsMzAuODA4ODlhMi44OTMxMywyLjg5MzEzLDAsMCwwLTMuMzAxNDUuNDY3ODMsNDMuODUxNjksNDMuODUxNjksMCwwLDAtNC4yMTY4LDUuMjI0MTJDMTIuOTE2LDM5Ljc3NDc3LDkuOTA5MTgsNDMuODQ5LDYuNTcwMzEsNDYuNjIxYTcuNDcxNzEsNy40NzE3MSwwLDAsMS0yLjcwNTA4LDEuNTMzNjlDMS4yMjg1Miw0OC44OTM5MSwwLDUyLjA3OTk1LDAsNTQuMDAwMzZhMS4wMDAxMywxLjAwMDEzLDAsMCwwLC4yOTMuNzA3bDUsNWEuOTk5NjQuOTk5NjQsMCwwLDAsMS40MTQwNiwwbDIuNDA3MjMtMi40MDc3MWE2LjA3NzcxLDYuMDc3NzEsMCwwLDAsMS4xNDg0NC0xLjYyMDEyQzE0LjU4NCw0Ni45MDU2MywxOS44NjkxNCw0NC40OTQ1LDI0LjExNjIxLDQyLjU1NzQ4YTIxLjY1NiwyMS42NTYsMCwwLDAsMy45NDIzOC0yLjExMzI4LDIuOTM4ODEsMi45Mzg4MSwwLDAsMCwxLjE3NDgtMi4xNDc5NSwyLjk5Nzg4LDIuOTk3ODgsMCwwLDAtLjEyNTI0LTEuMDUwNDJMNTkuNzU3ODEsMS42NTI3QS45OTk0Mi45OTk0MiwwLDAsMCw1OS43MDcuMjkzMzJabS0yNS44ODQ0NiwyMy43MDdoNC4wNTIwNkwyNy45NDUwNywzNS41MzE3M2wtMy40NzYtMy40NzY4MVpNOC40Njc3Nyw1NC43OTU3N2E0LjA2NjUsNC4wNjY1LDAsMCwxLS43Njc1OCwxLjA4OTg0TDYsNTcuNTg2MjksMi4wMjUzOSw1My42MTEyYy4xNDY0OC0xLjIyNzA1Ljk0MTQxLTMuMTI3OTMsMi4zNzk4OC0zLjUzMDc2QTkuNDA4MjQsOS40MDgyNCwwLDAsMCw3Ljg0NzY2LDQ4LjE2LDM2LjM4NjE3LDM2LjM4NjE3LDAsMCwwLDEyLDQ0LjAwMzU5VjQ5LjA4NDFBMzIuODgxODIsMzIuODgxODIsMCwwLDAsOC40Njc3Nyw1NC43OTU3N1ptMTguMzk3NDYtMTUuOTU3YTIwLjM2MjYyLDIwLjM2MjYyLDAsMCwxLTMuNTc5MSwxLjg5ODkzQTI4LjU3NDUsMjguNTc0NSwwLDAsMCwxNCw0Ni43OTI1M1Y0MS41ODIzOWMxLjA1NDYzLTEuMzM5OSwyLjAzOTI1LTIuNjcxNTcsMi45NDE0MS0zLjg5NGE0My4xMzA1MSw0My4xMzA1MSwwLDAsMSwzLjk4NTM1LTQuOTYwNDVjLjY0MTYtLjYwODQsMS40OTguMTExMzMsMS44MzU5NC40NDg3M2w0LjE4MDY2LDQuMTgyMTNhMS4wMTQsMS4wMTQsMCwwLDEsLjI5NDkyLjc5MkEuOTMxNDIuOTMxNDIsMCwwLDEsMjYuODY1MjQsMzguODM4NzNaTTM5LjU5NjgsMjIuMDAwMzZIMzYuMTQ1MDhMNDkuNDk4LDEwLjUwMTgyWiIvPjwvZz48L3N2Zz4='), auto;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', serif; /* Use fonte similar a pergaminho */
+    background-color: #3B4049;
+    gap: 20px;
+  }
+  
+  .hogwarts-theme {
+    background-color: #3e2f0f; /* Cor de fundo marrom, tipo pergaminho antigo */
+    color: #ffd700; /* Dourado clássico para o texto */
+    border: 2px solid #7f6a00; /* Bordas em estilo antigo */
+    padding: 20px;
+    width: 80%;
+    margin: 50px auto;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Efeito de sombra */
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+  }
+  
+  .hogwarts-theme h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Cinzel', serif; /* Uma fonte que lembra estilo antigo/mágico */
+    color: #ffd700; /* Dourado */
+  }
+  
+  .hogwarts-theme p {
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20%;
+    font-size: 1.5em;
+    line-height: 1.5;
+    color: #fff9e6; /* Cor do texto em tom mais claro */
+    margin-top: 20px;
+  }
+  
+  .hogwarts-theme .seal-home {
+    margin-top: 20px;
+    width: 150px; /* Tamanho do selo */
+    border-radius: 50%; /* Selo redondo */
+    border: 4px solid #ffd700; /* Borda dourada ao redor do selo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Sombra para dar profundidade */
+  }
 
-nav ul li {
-    margin: 20px;
-}
-
-/* Estilo das "cartas" */
-.carta-hp {
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    background: #f5deb3;
-    color: #5b4636;
-    border: 2px solid #5b4636;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  .wrapper {
+    height: 200px;
+    width: 300px;
+    background-color: #8b4513a0; /* Cor semelhante a pergaminho */
     position: relative;
-}
-
-.carta-hp:hover {
-    transform: rotate(-2deg) scale(1.1);
-    background-color: #ede6d1;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-/* Estilo do ponteiro (varinha) */
-body {
-    cursor: url('wand.png'), auto; /* A URL precisa ser a de uma imagem de varinha */
-}
-
-/* Animação de feitiço */
-body::after {
-    content: '';
-    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .lid {
     position: absolute;
-    width: 15px;
-    height: 15px;
-    background: radial-gradient(circle, #ff0, transparent);
-    border-radius: 50%;
-    opacity: 0;
-    animation: feitiço 1s infinite ease-out;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-right: 150px solid transparent;
+    border-bottom: 100px solid transparent;
+    border-left: 150px solid transparent;
+    transform-origin: top;
+    transition: transform 0.25s linear;
+  }
+  
+  .lid.one {
+    border-top: 100px solid #DED9BA; /* Cor do envelope */
+    transform: rotateX(0deg);
+    z-index: 3;
+    transition-delay: 0.75s;
+  }
+  
+  .lid.two {
+    border-top: 100px solid #DED9BA; /* Envelope */
+    transform: rotateX(90deg);
+    z-index: 1;
+    transition-delay: 0.5s;
+  }
+  
+  .envelope {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-top: 100px solid transparent;
+    border-right: 150px solid #D7CFA0; /* Dourado Hogwarts */
+    border-bottom: 100px solid #D7CFA0;
+    border-left: 150px solid #D7CFA0;
+    z-index: 3;
+  }
+  
+  .letter {
+    position: absolute;
+    top: 0;
+    width: 80%;
+    height: 80%;
+    background-color: rgb(255, 244, 215);
+    border-radius: 15px;
+    z-index: 2;
+    transition: 0.5s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .letter p {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 30px;
+    color: #3B4049;
+  }
+
+  .letter-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin: 50px;
+  }
+  
+  .seal {
+    display: block;
+    margin: 20px auto;
+    width: 80px;
+    height: auto;
+  }
+  
+  .wrapper:hover .lid.one {
+    transform: rotateX(90deg);
+    transition-delay: 0s;
+  }
+  
+  .wrapper:hover .lid.two {
+    transform: rotateX(180deg);
+    transition-delay: 0.25s;
+  }
+  
+  .wrapper:hover .letter {
+    transform: translateY(-50px);
+    transition-delay: 0.5s;
+  }
+  
+
+
+header {
+  display: flex; /* Para alinhar título e botão lado a lado */
+  flex-direction: column;
+  gap: 15px;/* Espaço entre título e botão */
+  align-items: center; /* Alinha verticalmente */
 }
 
-@keyframes feitiço {
-    0% {
-        transform: scale(0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(10);
-        opacity: 0;
-    }
+h1 {
+  color: #c59909; /* Cor escura para o título */
 }
 
-/* Animação ao mover o mouse */
-body:hover::after {
-    opacity: 1;
-    animation: feitiço 1s ease-out;
+.btn {
+  padding: 10px 20px;
+  background-color: #3e2723;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+#textos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 450px; /* Altura máxima para a área de texto */
+  overflow-y: auto; /* Adiciona a barra de rolagem */
+  padding-right: 15px; /* Espaço para a barra de rolagem */
+}
+
+.texto-box {
+  background: #fff3e0; /* Fundo semelhante a papel */
+  border: 1px solid #d7b49c; /* Borda clara */
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  position: relative;
+  font-size: 16px; /* Tamanho da fonte */
+  word-wrap: break-word;/* Altura automática */
+}
+
+/* Simulação de bordas de pergaminho */
+.texto-box::before,
+.texto-box::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 10px; /* Cor da borda */
+}
+
+.texto-box::before {
+  top: -10px; /* Borda superior */
+  left: 0;
+}
+
+.texto-box::after {
+  bottom: -10px; /* Borda inferior */
+  left: 0;
+}
+
+#gerarAleatorio {
+  background-color: #8B4513;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 10%;
+}
+
+#gerarAleatorio:hover {
+  background-color: #A0522D;
+}
+
+.caixinha-surpresa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid #8B4513;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.caixinha-surpresa-capa {
+  width: 100%;
+  height: 50px;
+  background-color: #8B4513;
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.highlight-text {
+  font-size: 1.2rem;
+  color: #8B4513;
+  font-style: italic;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.fa-home {
+  margin-right: 8px;
+}
+
+.fa-gift {
+  margin-right: 8px;
 }
